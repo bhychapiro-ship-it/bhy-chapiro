@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BHY CHAPIRO - Recargas Free Fire</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f2f2; margin: 0; }
+    header { background: #ff4444; color: white; padding: 20px; text-align: center; }
+    .container { padding: 20px; max-width: 800px; margin: auto; }
+    .product { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .product h3 { margin: 0; }
+    .product p { color: #666; }
+    form { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    input, select, button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    button { background: #ff4444; color: white; border: none; cursor: pointer; }
+    footer { background: #ff4444; color: white; text-align: center; padding: 15px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>BHY CHAPIRO</h1>
+  <p>¡Recargas rápidas y seguras para Free Fire!</p>
+</header>
+
+<div class="container">
+  <!-- Catálogo -->
+  <div class="product"><h3>100 Diamantes</h3><p>Precio: $1.80</p></div>
+  <div class="product"><h3>310 Diamantes</h3><p>Precio: $3.80</p></div>
+  <div class="product"><h3>520 Diamantes</h3><p>Precio: $5.80</p></div>
+  <div class="product"><h3>1.100 Diamantes</h3><p>Precio: $11.00</p></div>
+  <div class="product"><h3>2.100 Diamantes</h3><p>Precio: $22.00</p></div>
+
+  <!-- Formulario -->
+  <form>
+    <h2>Solicita tu recarga</h2>
+    <input type="text" placeholder="ID de Free Fire" required>
+    <input type="text" placeholder="Nombre del jugador">
+    <select>
+      <option>100 Diamantes - $1.80</option>
+      <option>310 Diamantes - $3.80</option>
+      <option>520 Diamantes - $5.80</option>
+      <option>1.100 Diamantes - $11.00</option>
+      <option>2.100 Diamantes - $22.00</option>
+    </select>
+    <select>
+      <option>TRANSFERENCIA</option>
+      <option>PAYPAL</option>
+      <option>POR WHATSAPP</option>
+    </select>
+    <input type="text" placeholder="Número de contacto o correo">
+    <button type="button" onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
+  </form>
+</div>
+
+<footer>
+  &copy; 2025 BHY CHAPIRO | Contacto: +593 993580693
+</footer>
+
+<script>
+function enviarPedido() {
+  const id = document.querySelector('input[placeholder="ID de Free Fire"]').value;
+  const nombre = document.querySelector('input[placeholder="Nombre del jugador"]').value;
+  const paquete = document.querySelectorAll('select')[0].value;
+  const pago = document.querySelectorAll('select')[1].value;
+  const contacto = document.querySelector('input[placeholder="Número de contacto o correo"]').value;
+
+  const mensaje = `Hola, quiero una recarga:\nID: ${id}\nNombre: ${nombre}\nPaquete: ${paquete}\nMétodo de pago: ${pago}\nContacto: ${contacto}`;
+  const numero = "593993580693";
+
+  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
+}
+</script>
+
+</body>
+</html>
